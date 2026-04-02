@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management Portfolio | FinTech Specialist</title>
+    <style>
+        :root {
+            --primary: #1a2a6c;
+            --secondary: #b21f1f;
+            --accent: #fdbb2d;
+            --bg: #f8f9fa;
+            --text: #333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), #2a4858);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover { color: var(--secondary); }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        section { margin-bottom: 4rem; }
+
+        h2 {
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover { transform: translateY(-5px); }
+
+        .tag {
+            background: #e9ecef;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #333;
+            color: var(--white);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Product Manager | FinTech & Strategy</h1>
+    <p>Bridging the gap between data-driven insights and autonomous financial ecosystems.</p>
+</header>
+
+<nav>
+    <a href="#about">Philosophy</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+    
+    <section id="about">
+        <h2>Product Philosophy</h2>
+        <p>I focus on "Agentic Finance"—the shift from simple digital wallets to autonomous financial tools that act as a personal CFO. By combining <strong>Machine Learning</strong> and <strong>Jobs to be Done</strong> frameworks, I build products that don't just track data, but provide actionable intelligence.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Autonomous UPI Spending Tracker</h3>
+                <p>A FinTech super-app concept designed to identify micro-transaction leaks and automate personal budgeting for college students and professionals.</p>
+                <div>
+                    <span class="tag">Product Strategy</span>
+                    <span class="tag">UPI Ecosystem</span>
+                </div>
+                <a href="#" class="cta-button">View Case Study</a>
+            </div>
+
+            <div class="card">
+                <h3>Pet Grooming Q-Commerce Integration</h3>
+                <p>Conducted market feasibility for a mobile pet grooming service within quick-commerce apps, focusing on Tier 1 city demand and regulatory logistics.</p>
+                <div>
+                    <span class="tag">Market Analysis</span>
+                    <span class="tag">GTM Strategy</span>
+                </div>
+                <a href="#" class="cta-button">View Analysis</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Expertise & Tools</h2>
+        <div class="grid">
+            <div>
+                <h3>Technical</h3>
+                <div class="skill-list">
+                    <span class="tag">Python (Seaborn/Matplotlib)</span>
+                    <span class="tag">Regression Analysis</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">3D Hardware Prototyping</span>
+                </div>
+            </div>
+            <div>
+                <h3>Domain</h3>
+                <div class="skill-list">
+                    <span class="tag">Digital Payments (ACH/UPI)</span>
+                    <span class="tag">GTM Strategy</span>
+                    <span class="tag">Institutional Banking</span>
+                    <span class="tag">Agile Methodology</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="extra">
+        <h2>Beyond the Screen</h2>
+        <p>When I'm not mapping out user journeys, I'm usually troubleshooting 3D prints or experimenting with PLA filament designs. I believe the iterative process of hardware—finding the "fail point" and optimizing—is exactly the same mindset needed for great software.</p>
+    </section>
+
+</div>
+
+<footer id="contact">
+    <p>Let's build the future of finance together.</p>
+    <p>Email: your.email@example.com | LinkedIn: /in/yourprofile</p>
+</footer>
+
+</body>
+</html>
