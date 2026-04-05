@@ -3,199 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Management Portfolio | FinTech Specialist</title>
+    <title>Arjun Suresh | Product Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a2a6c;
-            --secondary: #b21f1f;
-            --accent: #fdbb2d;
-            --bg: #f8f9fa;
-            --text: #333;
-            --white: #ffffff;
+            --primary-blue: #1A73E8; /* Policy Lens Blue */
+            --zerodha-blue: #387ed1; /* Zerodha Coin Blue */
+            --dark-bg: #0f172a;
+            --text-main: #334155;
+            --text-light: #64748b;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text-main); background: #f8fafc; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: #1e293b; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-        header {
-            background: linear-gradient(135deg, var(--primary), #2a4858);
-            color: var(--white);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
+        /* Hero Section */
+        header { background: white; padding: 80px 0; border-bottom: 1px solid #e2e8f0; }
+        .hero { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+        .profile-img { width: 280px; height: 280px; background: #e2e8f0; border-radius: 24px; object-fit: cover; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        .hero-text { flex: 1; min-width: 300px; }
+        .hero-text h1 { font-size: 3rem; margin-bottom: 10px; color: var(--primary-blue); }
+        .hero-text p.tagline { font-size: 1.25rem; font-weight: 600; margin-bottom: 20px; color: #475569; }
 
-        nav {
-            position: sticky;
-            top: 0;
-            background: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            padding: 1rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            z-index: 1000;
-        }
+        /* Case Study Layout */
+        .case-study { padding: 80px 0; border-bottom: 1px solid #e2e8f0; }
+        .case-study.white { background: white; }
+        .label { display: inline-block; padding: 4px 12px; border-radius: 20px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }
+        .label-surescan { background: #eef2ff; color: var(--primary-blue); }
+        .label-zerodha { background: #e0f2fe; color: var(--zerodha-blue); }
 
-        nav a {
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: bold;
-            transition: color 0.3s;
-        }
+        .video-placeholder { width: 100%; aspect-ratio: 16/9; background: #1e293b; border-radius: 16px; margin: 30px 0; display: flex; align-items: center; justify-content: center; color: white; position: relative; overflow: hidden; }
+        
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .hero { text-align: center; justify-content: center; } }
 
-        nav a:hover { color: var(--secondary); }
+        /* Logic Tables */
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.9rem; }
+        th { text-align: left; background: #f1f5f9; padding: 12px; border: 1px solid #e2e8f0; }
+        td { padding: 12px; border: 1px solid #e2e8f0; vertical-align: top; }
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 2rem;
-        }
+        /* Stats Cards */
+        .stat-card { background: #f1f5f9; padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary-blue); }
+        .stat-card.z { border-left-color: var(--zerodha-blue); }
 
-        section { margin-bottom: 4rem; }
-
-        h2 {
-            border-bottom: 3px solid var(--accent);
-            display: inline-block;
-            margin-bottom: 1.5rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .card:hover { transform: translateY(-5px); }
-
-        .tag {
-            background: #e9ecef;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin-right: 0.5rem;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            background: #333;
-            color: var(--white);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--primary);
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
-        }
+        /* Footer */
+        footer { padding: 60px 0; text-align: center; background: #1e293b; color: white; }
+        .social-links a { color: #94a3b8; text-decoration: none; margin: 0 15px; font-weight: 600; transition: 0.3s; }
+        .social-links a:hover { color: white; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Product Manager | FinTech & Strategy</h1>
-    <p>Bridging the gap between data-driven insights and autonomous financial ecosystems.</p>
-</header>
+    <header>
+        <div class="container hero">
+            <img src="https://via.placeholder.com/280x280" alt="Arjun Suresh" class="profile-img">
+            <div class="hero-text">
+                <h1>Arjun Suresh</h1>
+                <p class="tagline">Aspiring Product Manager | FinTech Specialist</p>
+                <p>"I bridge the gap between complex financial systems and intuitive user experiences. Currently training to build the next generation of transparent, data-driven FinTech products."</p>
+                <br>
+                <p><strong>Tools:</strong> Python (Data Viz), SQL, Figma, PRD Documentation</p>
+            </div>
+        </div>
+    </header>
 
-<nav>
-    <a href="#about">Philosophy</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <section class="case-study white">
+        <div class="container">
+            <span class="label label-surescan">Case Study 1</span>
+            <h2>Project: SureScan | Insurance Intelligence MVP</h2>
+            <p><strong>Role:</strong> Lead Product Manager</p>
 
-<div class="container">
-    
-    <section id="about">
-        <h2>Product Philosophy</h2>
-        <p>I focus on "Agentic Finance"—the shift from simple digital wallets to autonomous financial tools that act as a personal CFO. By combining <strong>Machine Learning</strong> and <strong>Jobs to be Done</strong> frameworks, I build products that don't just track data, but provide actionable intelligence.</p>
-    </section>
-
-    <section id="projects">
-        <h2>Featured Projects</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Autonomous UPI Spending Tracker</h3>
-                <p>A FinTech super-app concept designed to identify micro-transaction leaks and automate personal budgeting for college students and professionals.</p>
-                <div>
-                    <span class="tag">Product Strategy</span>
-                    <span class="tag">UPI Ecosystem</span>
-                </div>
-                <a href="#" class="cta-button">View Case Study</a>
+            <div class="video-placeholder">
+                <p>▶ [Explain Video: SureScan Walkthrough]</p>
             </div>
 
-            <div class="card">
-                <h3>Pet Grooming Q-Commerce Integration</h3>
-                <p>Conducted market feasibility for a mobile pet grooming service within quick-commerce apps, focusing on Tier 1 city demand and regulatory logistics.</p>
+            <div class="grid">
                 <div>
-                    <span class="tag">Market Analysis</span>
-                    <span class="tag">GTM Strategy</span>
+                    <h3>The Challenge</h3>
+                    <p>Insurance policies in India are 100-page "Black Boxes." Users often discover hidden exclusions only during a medical emergency, leading to a massive trust deficit in the industry.</p>
                 </div>
-                <a href="#" class="cta-button">View Analysis</a>
+                <div class="stat-card">
+                    <h3>Key Impact</h3>
+                    <ul>
+                        <li><strong>Time-to-Clarity:</strong> 45 min → 3 min.</li>
+                        <li><strong>Accountability:</strong> AI summary linked to original PDF clause.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Logic & Business Rules</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Jargon-Buster</strong></td>
+                        <td>IF term = [Legal Jargon], THEN display [Plain English] (e.g. "Capping" → "Room Rent Limit").</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exclusion Finder</strong></td>
+                        <td>AI scans for "Waiting Periods" and "Sub-limits"; triggers <strong>High-Alert Red</strong> UI.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Claim-Ready Score</strong></td>
+                        <td>Proprietary 1-10 score based on Claim Ratio, Hospital Proximity, and Transparency.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="case-study">
+        <div class="container">
+            <span class="label label-zerodha">Case Study 2</span>
+            <h2>Zerodha Coin | SIP Transparency & Analytics</h2>
+            <p><strong>Focus:</strong> Product Growth & Retention</p>
+
+            <div class="video-placeholder">
+                <p>▶ [Explain Video: Proposed SIP Dashboard]</p>
+            </div>
+
+            <div class="grid">
+                <div>
+                    <h3>The Problem</h3>
+                    <p>Zerodha Coin simplifies investing but lacks performance visibility. Users see a "Total Portfolio" view but cannot see how individual SIP installments are performing or exactly when units are allotted.</p>
+                </div>
+                <div class="stat-card z">
+                    <h3>Expected Success</h3>
+                    <ul>
+                        <li><strong>15% Increase</strong> in SIP retention.</li>
+                        <li><strong>30% Reduction</strong> in "NAV anxiety" support tickets.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div>
+                    <h4>SIP Cohort Dashboard</h4>
+                    <p>Treats each monthly installment as a separate entry to visualize the power of Rupee Cost Averaging during market volatility.</p>
+                </div>
+                <div>
+                    <h4>Execution Timeline</h4>
+                    <p>Progress Bar: Bank Debit → Order Sent → NAV Applied → Unit Allotment. Total transparency on investment status.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="skills">
-        <h2>Expertise & Tools</h2>
-        <div class="grid">
-            <div>
-                <h3>Technical</h3>
-                <div class="skill-list">
-                    <span class="tag">Python (Seaborn/Matplotlib)</span>
-                    <span class="tag">Regression Analysis</span>
-                    <span class="tag">SQL</span>
-                    <span class="tag">3D Hardware Prototyping</span>
-                </div>
+    <footer>
+        <div class="container">
+            <h3>Let's build something impactful.</h3>
+            <br>
+            <div class="social-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+                <a href="mailto:yourname@email.com">Email</a>
             </div>
-            <div>
-                <h3>Domain</h3>
-                <div class="skill-list">
-                    <span class="tag">Digital Payments (ACH/UPI)</span>
-                    <span class="tag">GTM Strategy</span>
-                    <span class="tag">Institutional Banking</span>
-                    <span class="tag">Agile Methodology</span>
-                </div>
-            </div>
+            <br>
+            <p style="font-size: 0.8rem; color: #64748b;">&copy; 2026 Arjun Suresh. Built for FinTech PM Portfolio.</p>
         </div>
-    </section>
-
-    <section id="extra">
-        <h2>Beyond the Screen</h2>
-        <p>When I'm not mapping out user journeys, I'm usually troubleshooting 3D prints or experimenting with PLA filament designs. I believe the iterative process of hardware—finding the "fail point" and optimizing—is exactly the same mindset needed for great software.</p>
-    </section>
-
-</div>
-
-<footer id="contact">
-    <p>Let's build the future of finance together.</p>
-    <p>Email: arjunsuresh98@gmail.com | LinkedIn: https://www.linkedin.com/in/arjun-suresh-5457b616b/</p>
-</footer>
+    </footer>
 
 </body>
 </html>
