@@ -3,250 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arjun Suresh | Product Management Portfolio</title>
+    <title>Arjun Suresh | Product Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Outfit:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #2563eb;
-            --accent-blue: #dbeafe;
-            --zerodha-blue: #387ed1;
-            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --border-color: #cbd5e1;
+            --primary: #2563eb;
+            --accent: #60a5fa;
+            --dark: #0f172a;
+            --bg: #f1f5f9;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --border: #cbd5e1;
+            --glass: rgba(255, 255, 255, 0.7);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
-            line-height: 1.6; 
-            color: #1e293b; 
-            background: var(--bg-gradient);
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
             background-attachment: fixed;
+            color: #1e293b;
+            padding-bottom: 0;
         }
 
-        h1, h2, h3 { font-family: 'Outfit', sans-serif; color: #0f172a; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
 
-        /* TOP NAVIGATION HEADER */
+        /* TOP NAVIGATION */
         nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 0;
-        }
-        .nav-content {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 800px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            padding: 12px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 1000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
-        .logo { font-weight: 800; font-size: 1.2rem; color: var(--primary-blue); text-decoration: none; }
-        .nav-links a { text-decoration: none; color: #475569; font-weight: 600; margin-left: 2rem; font-size: 0.9rem; transition: 0.2s; }
-        .nav-links a:hover { color: var(--primary-blue); }
+        nav a { text-decoration: none; color: var(--dark); font-weight: 700; font-size: 0.9rem; margin-left: 20px; }
+        .logo { color: var(--primary) !important; margin-left: 0 !important; font-size: 1.2rem !important; }
 
         /* HERO SECTION */
         header { 
-            padding: 100px 0 60px; 
-            background: white; 
-            border-bottom: 4px solid var(--primary-blue);
-            margin-bottom: 40px;
+            padding: 140px 0 80px; 
+            text-align: center;
         }
-        .hero { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
-        .profile-card {
-            background: white;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 32px;
-            box-shadow: var(--card-shadow);
+        .profile-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
         }
-        .profile-img { width: 300px; height: 350px; border-radius: 24px; object-fit: cover; display: block; }
-        .hero-text { flex: 1; min-width: 350px; }
-        .hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; background: linear-gradient(to right, #1e293b, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-text .tagline { font-size: 1.4rem; color: #334155; font-weight: 700; margin-bottom: 1.5rem; display: block; }
+        .profile-img { 
+            width: 220px; height: 220px; 
+            border-radius: 60px; 
+            object-fit: cover; 
+            border: 8px solid white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
 
-        /* CASE STUDY CARDS */
-        .case-study { 
-            background: white; 
-            border: 1px solid var(--border-color); 
-            border-radius: 24px; 
-            padding: 48px; 
-            margin-bottom: 60px; 
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease;
-        }
-        .case-study:hover { transform: translateY(-5px); }
+        .hero-text h1 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; color: var(--dark); letter-spacing: -1px; }
+        .hero-text p { font-size: 1.2rem; color: #475569; max-width: 600px; margin: 15px auto; }
 
-        .label { 
-            display: inline-block; 
-            padding: 6px 16px; 
-            border-radius: 100px; 
-            font-weight: 800; 
-            font-size: 0.7rem; 
-            text-transform: uppercase; 
-            margin-bottom: 20px; 
-            border: 1px solid currentColor;
+        /* CONTENT CARDS */
+        .section-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
         }
-        .label-surescan { background: #eff6ff; color: var(--primary-blue); }
-        .label-zerodha { background: #f0f9ff; color: var(--zerodha-blue); }
+        .section-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 6px; height: 100%;
+            background: var(--primary);
+        }
 
-        .video-container { 
-            width: 100%; 
-            aspect-ratio: 16/9; 
-            background: #0f172a; 
-            border-radius: 16px; 
-            margin: 32px 0; 
-            border: 8px solid #f1f5f9;
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
+        .tag { 
+            background: var(--accent); color: white; 
+            padding: 5px 15px; border-radius: 20px; 
+            font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
+            display: inline-block; margin-bottom: 15px;
+        }
+
+        /* CASE STUDY SPECIFICS */
+        .video-box {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #0f172a;
+            border-radius: 20px;
+            margin: 30px 0;
+            display: flex;
+            align-items: center; justify-content: center;
             color: #94a3b8;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .section-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; margin-top: 32px; }
-        @media (max-width: 850px) { .section-grid { grid-template-columns: 1fr; } .hero { text-align: center; justify-content: center; } .hero-text h1 { font-size: 2.5rem; } }
-
-        /* STRUCTURED LOGIC BOXES */
-        .content-box {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 24px;
-            border-radius: 16px;
-            height: 100%;
+        .grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; margin-top: 20px; }
+        
+        .feature-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 8px;
+            margin-top: 20px;
         }
-        .content-box h3 { margin-bottom: 12px; font-size: 1.1rem; border-left: 4px solid var(--primary-blue); padding-left: 12px; }
-        .content-box.z h3 { border-left-color: var(--zerodha-blue); }
-
-        table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 24px; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; }
-        th { background: #f1f5f9; padding: 16px; text-align: left; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; }
-        td { padding: 16px; background: white; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem; }
+        .feature-table td {
+            background: white;
+            padding: 15px;
+            border: 1px solid var(--border);
+        }
+        .feature-table td:first-child { border-radius: 12px 0 0 12px; font-weight: 800; width: 30%; }
+        .feature-table td:last-child { border-radius: 0 12px 12px 0; color: #475569; }
 
         /* FOOTER */
-        footer { 
-            background: #0f172a; 
-            color: white; 
-            padding: 80px 0; 
-            text-align: center; 
-            border-top: 8px solid var(--primary-blue);
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0;
+            border-radius: 50px 50px 0 0;
+            text-align: center;
         }
-        .footer-links a { color: #94a3b8; text-decoration: none; margin: 0 20px; font-weight: 600; transition: 0.3s; }
-        .footer-links a:hover { color: white; border-bottom: 2px solid white; }
+        .contact-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .contact-btn:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3); }
 
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .hero-text h1 { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="container nav-content">
-            <a href="#" class="logo">AS.</a>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#surescan">SureScan</a>
-                <a href="#zerodha">Zerodha Case</a>
-                <a href="#contact">Contact</a>
-            </div>
+        <a href="#" class="logo">AS.</a>
+        <div class="links">
+            <a href="#projects">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <header id="about">
-        <div class="container hero">
-            <div class="profile-card">
-                <img src="https://via.placeholder.com/300x350" alt="Arjun Suresh" class="profile-img">
+        <div class="container">
+            <div class="profile-container">
+                <img src="https://via.placeholder.com/220" alt="Arjun Suresh" class="profile-img">
             </div>
             <div class="hero-text">
-                <span class="tagline">Product Manager • FinTech</span>
                 <h1>Arjun Suresh</h1>
-                <p style="font-size: 1.1rem; color: #475569; margin-bottom: 20px;">
-                    Bridging the gap between complex financial infrastructure and high-retention user experiences. 
-                    Specializing in <strong>UPI Ecosystems</strong> and <strong>AI-driven transparency tools</strong>.
-                </p>
-                <p><strong>Expertise:</strong> Python, SQL, PRD Drafting, UX Research, Figma.</p>
+                <p><strong>FinTech Product Manager</strong> dedicated to making complex financial systems transparent and user-first.</p>
             </div>
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" id="projects">
         
-        <section id="surescan" class="case-study">
-            <span class="label label-surescan">Case Study 01</span>
-            <h2>SureScan: Solving the Insurance "Black Box"</h2>
-            <p style="color: #64748b; font-weight: 600;">Product: Insurance Intelligence MVP • Role: Lead PM</p>
-            
-            <div class="video-container">
-                <p>⚡ Video Walkthrough Placeholder</p>
+        <section class="section-card">
+            <span class="tag">Insurance Tech</span>
+            <h2>SureScan: The Jargon-Buster</h2>
+            <p style="font-weight: 600; color: var(--primary);">Converting 100-page policies into 1-page Pulse Reports.</p>
+
+            <div class="video-box">
+                <p>▶ Click to Play Product Walkthrough</p>
             </div>
 
-            <div class="section-grid">
-                <div class="content-box">
-                    <h3>The Problem</h3>
-                    <p>Indian insurance policies are 100-page legal documents. Users face "Claim Surprises" because exclusions are buried in fine print. SureScan converts these into a 1-page "Pulse Report."</p>
+            <div class="grid">
+                <div>
+                    <h3>The Vision</h3>
+                    <p>Built an AI-driven MVP that solves the "Claim Surprise" problem by extracting hidden exclusions and translating legal jargon into plain English.</p>
                 </div>
-                <div class="content-box" style="border-left: 4px solid #10b981; background: #f0fdf4;">
-                    <h3 style="border-left: none;">Key Success Metrics</h3>
-                    <ul style="padding-left: 1rem;">
-                        <li><strong>Time-to-Clarity:</strong> 45m → 3m</li>
-                        <li><strong>Accuracy:</strong> 100% Citation linkage</li>
-                    </ul>
+                <div style="background: #eff6ff; padding: 20px; border-radius: 20px; border: 1px solid #dbeafe;">
+                    <h4>Impact</h4>
+                    <p><strong>45m → 3m</strong> Analysis time.</p>
+                    <p><strong>100%</strong> Citation accuracy.</p>
                 </div>
             </div>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Feature Module</th>
-                        <th>Logic & Functional Rules</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Jargon-Buster</strong></td>
-                        <td>IF term match [Legal_Library], THEN tooltip [Plain_English].</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Exclusion Radar</strong></td>
-                        <td>AI scans for sub-limits; highlights waiting periods in <strong>Alert Red</strong>.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Claim-Ready Score</strong></td>
-                        <td>Proprietary 1-10 ranking based on Settlement Ratios & Transparency.</td>
-                    </tr>
-                </tbody>
+            <table class="feature-table">
+                <tr>
+                    <td>Logic Engine</td>
+                    <td>IF [Term] in Legal_DB THEN return [Human_Speak].</td>
+                </tr>
+                <tr>
+                    <td>Exclusion Radar</td>
+                    <td>Auto-highlights sub-limits and waiting periods in <strong>Alert Red</strong>.</td>
+                </tr>
             </table>
         </section>
 
-        <section id="zerodha" class="case-study">
-            <span class="label label-zerodha">Case Study 02</span>
-            <h2>Zerodha Coin: SIP Performance & Transparency</h2>
-            <p style="color: #64748b; font-weight: 600;">Domain: WealthTech • Goal: Improvement & Retention</p>
+        <section class="section-card" style="border-left-color: #387ed1;">
+            <span class="tag" style="background: #387ed1;">WealthTech</span>
+            <h2>Zerodha Coin Optimization</h2>
+            <p style="font-weight: 600; color: #387ed1;">Improving SIP Retention through Execution Transparency.</p>
 
-            <div class="video-container">
-                <p>📈 Product Improvement Demo Placeholder</p>
+            <div class="video-box">
+                <p>📈 View Improvement Case Study</p>
             </div>
 
-            <div class="section-grid">
-                <div class="content-box z">
-                    <h3>The Friction</h3>
-                    <p>Coin lacks granular performance tracking for individual SIP cohorts. Users experience "NAV Anxiety" due to a lack of visibility during the bank-to-AMC deployment cycle.</p>
+            <div class="grid">
+                <div>
+                    <h3>The Problem</h3>
+                    <p>Investors lack visibility into individual SIP installment performance and NAV allocation status, leading to "investment anxiety."</p>
                 </div>
-                <div class="content-box z">
-                    <h3>Expected Impact</h3>
-                    <ul style="padding-left: 1rem;">
-                        <li><strong>+15%</strong> SIP Retention rate</li>
-                        <li><strong>-30%</strong> Support tickets on NAV status</li>
-                    </ul>
+                <div style="background: #f0f9ff; padding: 20px; border-radius: 20px; border: 1px solid #e0f2fe;">
+                    <h4>Expected Result</h4>
+                    <p><strong>+15%</strong> SIP Retention.</p>
+                    <p><strong>-30%</strong> Support overhead.</p>
                 </div>
             </div>
 
-            <div class="section-grid" style="margin-top: 20px;">
-                <div class="content-box z" style="background: #f0f9ff;">
-                    <h4>SIP Cohort Dashboard</h4>
-                    <p>Individualized installment tracking to visualize the benefit of Rupee Cost Averaging over time.</p>
+            <div class="grid" style="margin-top: 20px;">
+                <div style="border: 1px solid var(--border); padding: 15px; border-radius: 15px;">
+                    <strong>SIP Cohort Analytics</strong><br>
+                    <small>Visualizing Rupee Cost Averaging at the installment level.</small>
                 </div>
-                <div class="content-box z" style="background: #f0f9ff;">
-                    <h4>Execution Timeline</h4>
-                    <p>A "Track My Order" style flow: Bank Debit → Order Sent → NAV Applied → Unit Allotment.</p>
+                <div style="border: 1px solid var(--border); padding: 15px; border-radius: 15px;">
+                    <strong>Execution Tracker</strong><br>
+                    <small>Real-time status: Bank Debit → AMC → Unit Allotment.</small>
                 </div>
             </div>
         </section>
@@ -255,14 +247,13 @@
 
     <footer id="contact">
         <div class="container">
-            <h2 style="color: white; margin-bottom: 1rem;">Let's build the future of FinTech.</h2>
-            <p style="color: #94a3b8; margin-bottom: 2.5rem;">Currently open to Product Management opportunities.</p>
-            <div class="footer-links">
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
-                <a href="mailto:arjun@example.com">Email Me</a>
+            <h2>Ready to transform FinTech?</h2>
+            <p>I'm looking for my next challenge in Product Management.</p>
+            <a href="mailto:arjun@example.com" class="contact-btn">Email Me</a>
+            <div style="margin-top: 40px;">
+                <a href="#" style="color: white; margin: 0 10px;">LinkedIn</a>
+                <a href="#" style="color: white; margin: 0 10px;">GitHub</a>
             </div>
-            <p style="margin-top: 4rem; font-size: 0.8rem; color: #475569;">&copy; 2026 Arjun Suresh. Designed for High-Impact Product Roles.</p>
         </div>
     </footer>
 
