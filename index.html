@@ -264,41 +264,81 @@ margin-top:120px;
 
 font-size:32px;
 
-margin-bottom:20px;
+margin-bottom:40px;
+
+text-align:center;
 
 }
+
+/* VERTICAL PREMIUM LAYOUT */
 
 .build-grid{
 
-display:grid;
+display:flex;
 
-grid-template-columns:repeat(3,1fr);
+flex-direction:column;
 
 gap:30px;
 
+max-width:720px;
+
+margin:auto;
+
 }
+
+/* CARD */
 
 .build-card{
 
 background:white;
 
-padding:30px;
+padding:35px 40px;
 
-border-radius:16px;
+border-radius:18px;
 
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+border-left:4px solid #2563eb;
 
-transition:all 0.3s ease;
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
+
+transition:all 0.35s ease;
+
+position:relative;
 
 }
+
+/* SUBTLE GRADIENT EDGE */
+
+.build-card::before{
+
+content:"";
+
+position:absolute;
+
+left:-4px;
+
+top:0;
+
+bottom:0;
+
+width:4px;
+
+background:linear-gradient(180deg,#2563eb,#7c3aed);
+
+border-radius:4px;
+
+}
+
+/* HOVER EFFECT */
 
 .build-card:hover{
 
 transform:translateY(-6px);
 
-box-shadow:0 20px 40px rgba(0,0,0,0.12);
+box-shadow:0 22px 50px rgba(0,0,0,0.12);
 
 }
+
+/* TITLE */
 
 .build-card h3{
 
@@ -306,15 +346,22 @@ margin-top:0;
 
 font-size:20px;
 
+margin-bottom:10px;
+
 }
+
+/* DESCRIPTION */
 
 .build-card p{
 
 color:#475569;
 
-line-height:1.6;
+line-height:1.7;
+
+font-size:16px;
 
 }
+
 
 /* ABOUT */
 
